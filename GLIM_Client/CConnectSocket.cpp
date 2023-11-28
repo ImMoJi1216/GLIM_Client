@@ -19,9 +19,9 @@ void CConnectSocket::OnReceive(int nErrorCode)
     TCHAR strBuffer[1024];
     ::ZeroMemory(strBuffer, sizeof(strBuffer));
     // ::은 범위지정 연산자  strBuffer의 배열을 0으로 지정
+    
     if (Receive(strBuffer, sizeof(strBuffer)) > 0) // 전달된 데이터(문자열)가 있을 경우
     {
-        AfxMessageBox(_T("씨발련아"));
         TRACE(_T("Received data: %s\n"), strBuffer);
         CStringArray tokens;
         SplitCString(strBuffer, tokens, _T(','));
