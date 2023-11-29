@@ -585,3 +585,8 @@ void CGLIMClientDlg::rec_Arduino()
 		}
 	}
 }
+
+void CGLIMClientDlg::Send_Result_Arduino(const char * num)
+{
+	m_pArduino->WriteData(num, 1);
+}
