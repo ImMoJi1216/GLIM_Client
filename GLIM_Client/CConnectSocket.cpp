@@ -28,9 +28,18 @@ void CConnectSocket::OnReceive(int nErrorCode)
         if (tokens.GetSize() >= 2)
         {
             CString Type_Token = tokens.GetAt(0);
+            CString Results_Token = tokens.GetAt(1);
             if (Type_Token == "Results")
             {
-                pMain->m_List.AddString(_T("¾¾¹ß¾Æ"));
+                if (Results_Token == "2")
+                {
+                    pMain->Send_Result_Arduino("2");
+                }
+                else if (Results_Token == "3")
+                {
+                    pMain->Send_Result_Arduino("3");
+                    pMain->m_List.AddString(_T("RESULT LOG : ºÒ·® °¨ÁöµÊ"));
+                }
             }
         }
     }

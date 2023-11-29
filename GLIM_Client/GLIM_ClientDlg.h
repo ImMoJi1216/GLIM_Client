@@ -83,7 +83,8 @@ public:
 	void SendImage(CSocket& socket, const Mat& image);				// 이미지 전송
 	void Saveing_IMG(Mat& mat_temp);								// 이미지 저장후 서버에 전송
 	void Send_Streaming(Mat& mat_temp);								// 서버에 실시간 전송
-	void Arduino_control();
+	void Arduino_control();											// 아두이노 컨트롤 시작
+	void Send_Result_Arduino(const char * num);								// 아두이노에 검사 결과 전송
 
 	// MFC에서 생성한 함수
 	afx_msg void OnDestroy();										// 나중에 더찾아봐야할듯;
