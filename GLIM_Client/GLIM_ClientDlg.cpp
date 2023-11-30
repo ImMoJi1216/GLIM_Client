@@ -77,7 +77,6 @@ BEGIN_MESSAGE_MAP(CGLIMClientDlg, CDialogEx)
 	ON_BN_CLICKED(IDC_BUTTON1, &CGLIMClientDlg::Btn_StartThread)
 	ON_BN_CLICKED(IDC_BUTTON2, &CGLIMClientDlg::Btn_EndThread)
 	ON_BN_CLICKED(IDC_BUTTON3, &CGLIMClientDlg::Btn_Inspection)
-	ON_BN_CLICKED(IDC_BUTTON5, &CGLIMClientDlg::OnBnClickedButton5)
 END_MESSAGE_MAP()
 
 
@@ -547,13 +546,6 @@ void CGLIMClientDlg::SendImage(CSocket& socket, const Mat& image)
 			m_bInspection = false;	// 테스트 호진
 		}
 	}
-}
-
-void CGLIMClientDlg::OnBnClickedButton5()
-{
-	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
-
-
 }
 
 void CGLIMClientDlg::rec_Arduino()
