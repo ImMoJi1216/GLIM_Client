@@ -38,13 +38,20 @@ void CConnectSocket::OnReceive(int nErrorCode)
                 else if (Results_Token == "3")
                 {
                     pMain->Send_Result_Arduino("3");
-                    pMain->m_List.AddString(_T("RESULT LOG : ºÒ·® °¨ÁöµÊ"));
+                    CString currentTime = GetFormattedCurrentTime();
+                    pMain->m_List.AddString(_T("RESULT LOG - ("  + currentTime + ") : ºÒ·® °¨ÁöµÊ"));
                 }
             }
         }
     }
     CSocket::OnReceive(nErrorCode);
 
+}
+
+CString CConnectSocket::GetFormattedCurrentTime()
+{
+    CTime time = CTime::GetCurrentTime();
+    return time.Format(_T("%H:%M:%S"));
 }
 
 void CConnectSocket::SplitCString(const CString & input, CStringArray & output, TCHAR delimiter)
